@@ -16,10 +16,13 @@ class fraction(object):
     def __str__(self):
         return str(self.numer) + "/" + str(self.denom)
     
+    def __repr__(self):
+        return str(self.numer) + "/" + str(self.denom)
+    
     def reduce(self):
         gcf = math.gcd(int(self.numer), int(self.denom))
-        self.numer /= gcf
-        self.denom /= gcf
+        self.numer //= gcf
+        self.denom //= gcf
         
     def __mul__(self, frac2):
         
